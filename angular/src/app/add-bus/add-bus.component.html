@@ -1,0 +1,77 @@
+
+  <div class="container mt-5">
+    <div class="card shadow">
+      <div class="card-body">
+        <h2 class="text-center mb-4">Ajouter Bus :</h2>
+  
+        <form>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="typeBus" class="form-label">Type de bus</label>
+                <input type="text" class="form-control" id="typeBus" [(ngModel)]="newBus.typeBus" name="typeBus">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="price" class="form-label">Prix</label>
+                <input type="number" class="form-control" id="price" [(ngModel)]="newBus.price" name="price">
+              </div>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="dateMisenService" class="form-label">Date de création</label>
+                <input type="date" class="form-control" id="dateMisenService" [(ngModel)]="newBus.dateMisenService" name="dateMisenService">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="couleur" class="form-label">Couleur</label>
+                <input type="text" class="form-control" id="couleur" [(ngModel)]="newBus.couleur" name="couleur">
+              </div>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="capacity" class="form-label">Capacité</label>
+                <input type="number" class="form-control" id="capacity" [(ngModel)]="newBus.capacity" name="capacity">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="idMarque" class="form-label">Marque</label>
+                <select class="form-control form-control-lg" id="idMarque" name="idMarque" [(ngModel)]="newIdMar">
+                  <option *ngFor="let marques of marque" [value]="marques.idMarque">{{marques.nomMarque}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="logo" class="form-label">Image</label>
+                <input type="file" class="form-control" (change)="onImageUpload($event)" id="logo" name="logo">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <img [src]="imagePath" class="img-fluid mt-3" style="max-width: 100%; height: auto;" *ngIf="imagePath">
+            </div>
+          </div>
+  
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <button type="submit" class="btn btn-success" (click)="ajouterBus()">Ajouter</button>
+            </div>
+          </div>
+        </form>
+  
+      </div>
+    </div>
+  </div>
+  
